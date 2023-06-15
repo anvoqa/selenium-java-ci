@@ -18,7 +18,7 @@
 		<maven.compiler.source>11</maven.compiler.source>
 
 		<!-- Global variable for dependencies -->
-		<webdriver.version>3.141.59</webdriver.version>
+		<webdriver.version>4.10.0</webdriver.version>
 		<testng.version>6.9.10</testng.version>
 		<webdrivermanager.version>5.3.3</webdrivermanager.version>
 	</properties>
