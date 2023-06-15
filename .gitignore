@@ -1,0 +1,11 @@
+test-output/
+
+*.class
+
+target/
+
+.classpath
+
+.project
+
+.settings/
