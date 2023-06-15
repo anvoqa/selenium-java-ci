@@ -1,10 +1,11 @@
 package commons;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -136,7 +137,7 @@ public class BasePage {
 	 * @param driver
 	 */
 	public void waitForAlertPresence() {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver,Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		explicitWait.until(ExpectedConditions.alertIsPresent());
 	}
 
@@ -414,7 +415,7 @@ public class BasePage {
 			String selectedItem) {
 		element = findElementByXpath(parentsXpath);
 		js = (JavascriptExecutor) driver;
-		explicitWait = new WebDriverWait(driver, 15);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		js.executeScript("arguments[0].click();", element);
 		waitInSeconds(1);
 		elements = findElementsByXpath(childrenXpath);
@@ -654,10 +655,10 @@ public class BasePage {
 	 * @param xpath
 	 */
 	public void waitForElementVisible(String xpath) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		try {
 			explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(xpath)));
-		} catch (ElementNotVisibleException e) {
+		} catch (ElementNotInteractableException e) {
 			System.out.println("Element is not visible!");
 		}
 
@@ -670,10 +671,10 @@ public class BasePage {
 	 * @param xpath
 	 */
 	public void waitForDynamicElementVisible(String xpath, String... dynamicValue) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		try {
 			explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byDynamicXpath(xpath, dynamicValue)));
-		} catch (ElementNotVisibleException e) {
+		} catch (ElementNotInteractableException e) {
 			System.out.println("Element is not visible!");
 		}
 
@@ -686,7 +687,7 @@ public class BasePage {
 	 * @param xpath
 	 */
 	public void waitForElementInvisible(String xpath) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(xpath)));
 	}
 
@@ -697,7 +698,7 @@ public class BasePage {
 	 * @param xpath
 	 */
 	public void waitForElementClikable(String xpath) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(xpath)));
 	}
 
@@ -708,7 +709,7 @@ public class BasePage {
 	 * @param xpath
 	 */
 	public void waitForElementPresence(String xpath) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		explicitWait.until(ExpectedConditions.presenceOfElementLocated(byXpath(xpath)));
 	}
 
@@ -793,10 +794,10 @@ public class BasePage {
 	 * @param restParams parameters used to identify the element
 	 */
 	public void waitForElementVisible(String xpath, String... restParams) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.MAX_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.MAX_TIMEOUT));
 		try {
 			explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(castToObject(xpath, restParams))));
-		} catch (ElementNotVisibleException e) {
+		} catch (ElementNotInteractableException e) {
 			System.out.println("Element is not visible!");
 		}
 
