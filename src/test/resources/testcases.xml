@@ -9,9 +9,9 @@
     </classes>
   </test>
   
-    <test name="Login - Edge">
+    <test name="Login - Chrome">
     <classes>
-    <parameter name="browser" value="edge" />
+    <parameter name="browser" value="chrome" />
       <class name="com.nopcommerce.user.TestLogin"/>
     </classes>
   </test>
