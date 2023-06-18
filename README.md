@@ -18,16 +18,18 @@ It's being developed using **Selenium**, one of the most common UI test librarie
 - resources
 
 ## ⚛️ OOP application ⚛️
-- _Inheritance_: (extends)
+- _**Inheritance**_: (extends)
   - All the page objects extend the `BasePage.java` which contains all common selenium built-in methods (that are optimized to reduce flakiness). These pages objects can re-use all the methods in the `BasePage.java` class (except the private ones)
   - All the test classes extends the `BaseTests.java` which contains the methods to initialize and setup webdriver and quit the webdriver
   - The homepage contains the common elements of other pages such as top menu, footer, etc. Therefore, other page objects extend the HomePageObject to re-use the methods of this page (e.g. click top menu link)
-- _Abstraction_: (implements interfaces, extends abstract classes)
-  
-- _Encapsulation_: (access modifier, getters, setters)
+- _**Abstraction**_: (implements interfaces, extends abstract classes)
+  - The methods of each page are implemented in the page object class. When using actions from a page object in the test class, we don't need to know how the actions are implemented, we only need to know what the actions do and what values we need to pass into the parameters. This abstraction simplifies the way test cases are developed and reduces the efforts of maintenance
+  - The `BasePage.java` and `the BaseTest.java` can be implemented as the abstract classes if there are any abstrat methods that need to be implemented from the children classes (page objects and test classes)
+  - Future implementation: Define an interface with an abstract method to get driver. For each browser driver, create a class that implements the interface to get browser driver for each brower (chrome, firefox, safari, edge) 
+- _**Encapsulation**_: (access modifier, getters, setters)
   - All the actions/methods of a page are defined in a page object class. To use the methods in a test, the page object needs to be instantiated and methods should be called through that object
   - In test classes, properties of an account need to be retrived via `Accounts.java` class. Account contains the properties of an account and getter and setter to access properties of this object.
-- _Polymorphism_: (overriding - run time, overloading - compile)
+- _**Polymorphism**_: (overriding - run time, overloading - compile)
   - Overloading: In the `BasePage.java` class, there are more than 1 methods to click an element. Each method has same number of parameters with different data types, or different number of parameters
   - Overriding: Since the page objects extend the `BasePage.java` class, the page object can have a method with same name and parameters as parent class but with different way of implementation
 
@@ -53,7 +55,7 @@ The job with the following steps will be executed on a clean instance (latest ub
   - Clone the github repo to your local
   - Make sure your local machine has the latest stable chrome version
 - Run test:
-  - Right click on the file _src/test/resources/testcases.xml_ and select **_Run As > TestNG Suite_**
+  - Right click on the file _src/test/resources/testcases.xml_ and select **_Run As > TestNG Suite_** (make sure you have TestNG runner installed if you use Eclipse as IDE)
   - Or open terminal and cd to project folder. Run test using Maven command `mvn clean test`
   - Or pushing a change to the 'main' branch in a forked repo to trigger workflow
 
