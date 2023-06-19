@@ -15,5 +15,21 @@ public class PageGeneratorManager {
 		return new RegisterPageObject(driver);
 	}
 	
+	public static AdminHomePageObject getAdminHomePage(WebDriver driver) {
+		return new AdminHomePageObject(driver);
+	}
+
+	public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver) {
+		return new AdminDashboardPageObject(driver);
+	}
+
+	public static AdminCommonPageObject getAdminCommonPage(WebDriver driver) {
+		return new AdminCommonPageObject(driver);
+	}
+	
+	public static AdminProductsPageObject getAdminProductsPage(WebDriver driver) {
+		return new AdminProductsPageObject(driver);
+	}
+	
 
 }

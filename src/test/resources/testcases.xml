@@ -4,15 +4,24 @@
 
   <test name="Registration - Chrome">
     <classes>
+    <parameter name="baseUrl" value="https://demo.nopcommerce.com/" />
     <parameter name="browser" value="h_chrome" />
       <class name="com.nopcommerce.user.TestRegistration"/>
     </classes>
   </test>
   
-    <test name="Login - Chrome">
+<!--     <test name="Login - Chrome"> -->
+<!--     <classes> -->
+<!--     <parameter name="browser" value="h_chrome" /> -->
+<!--       <class name="com.nopcommerce.user.TestLogin"/> -->
+<!--     </classes> -->
+<!--   </test> -->
+  
+      <test name="Login - Chrome">
     <classes>
+    <parameter name="baseUrl" value="https://admin-demo.nopcommerce.com/" />
     <parameter name="browser" value="h_chrome" />
-      <class name="com.nopcommerce.user.TestLogin"/>
+      <class name="com.nopcommerce.user.TestAdmin"/>
     </classes>
   </test>
   

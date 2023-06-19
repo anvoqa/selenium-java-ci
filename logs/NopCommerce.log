@@ -42,3 +42,65 @@
 [INFO ] [2023-06-19 13:27:46,846] Register_06 - Sep 01: Click Register link from Homepage
 [INFO ] [2023-06-19 13:27:47,233] Register_06 - Sep 02: Register an account having confirm password doesn't match with password
 [INFO ] [2023-06-19 13:27:48,346] Register_06 - Sep 03: Verify that error message "The password and confirmation password do not match." displays
+[INFO ] [2023-06-19 15:30:24,371] Register_01 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:30:25,071] Register_01 - Sep 02: Click Register button without entering any information
+[INFO ] [2023-06-19 15:30:25,237] Register_01 - Sep 03: Verify that error message "<field name> is required." for each required field displays
+[INFO ] [2023-06-19 15:30:25,545] Register_02 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:30:26,017] Register_02 - Sep 02: input all required fields with invalid email format
+[INFO ] [2023-06-19 15:30:26,996] Register_02 - Sep 03: Verify that error message "Wrong email" displays
+[INFO ] [2023-06-19 15:30:27,050] Register_03 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:30:27,510] Register_03 - Sep 02: Register an account using valid information
+[INFO ] [2023-06-19 15:30:27,511] Email: afc5926@yopmail.com
+[INFO ] [2023-06-19 15:30:29,408] Register_03 - Sep 03: Verify that success message "Your registration completed" displays
+[INFO ] [2023-06-19 15:30:30,341] Register_04 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:30:30,853] Register_04 - Sep 02: Register an account using an email that already exist in the system
+[INFO ] [2023-06-19 15:30:32,203] Register_04 - Sep 03: Verify that error message "The specified email already exists" displays
+[INFO ] [2023-06-19 15:30:32,378] Register_05 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:30:33,077] Register_05 - Sep 02: Register an account using password that has less than 6 characters
+[INFO ] [2023-06-19 15:30:34,389] Register_05 - Sep 03: Verify that error message "Password must meet the following rules:must have at least 6 characters" displays
+[INFO ] [2023-06-19 15:30:34,446] Register_06 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:30:34,875] Register_06 - Sep 02: Register an account having confirm password doesn't match with password
+[INFO ] [2023-06-19 15:30:35,699] Register_06 - Sep 03: Verify that error message "The password and confirmation password do not match." displays
+[INFO ] [2023-06-19 15:32:26,764] Register_01 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:32:27,594] Register_01 - Sep 02: Click Register button without entering any information
+[INFO ] [2023-06-19 15:32:27,734] Register_01 - Sep 03: Verify that error message "<field name> is required." for each required field displays
+[INFO ] [2023-06-19 15:32:28,035] Register_02 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:32:28,393] Register_02 - Sep 02: input all required fields with invalid email format
+[INFO ] [2023-06-19 15:32:29,332] Register_02 - Sep 03: Verify that error message "Wrong email" displays
+[INFO ] [2023-06-19 15:32:29,382] Register_03 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:32:29,801] Register_03 - Sep 02: Register an account using valid information
+[INFO ] [2023-06-19 15:32:29,801] Email: afc1729@yopmail.com
+[INFO ] [2023-06-19 15:32:31,264] Register_03 - Sep 03: Verify that success message "Your registration completed" displays
+[INFO ] [2023-06-19 15:32:31,898] Register_04 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:32:32,454] Register_04 - Sep 02: Register an account using an email that already exist in the system
+[INFO ] [2023-06-19 15:32:33,518] Register_04 - Sep 03: Verify that error message "The specified email already exists" displays
+[INFO ] [2023-06-19 15:32:33,566] Register_05 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:32:34,033] Register_05 - Sep 02: Register an account using password that has less than 6 characters
+[INFO ] [2023-06-19 15:32:34,993] Register_05 - Sep 03: Verify that error message "Password must meet the following rules:must have at least 6 characters" displays
+[INFO ] [2023-06-19 15:32:35,036] Register_06 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:32:35,435] Register_06 - Sep 02: Register an account having confirm password doesn't match with password
+[INFO ] [2023-06-19 15:32:36,241] Register_06 - Sep 03: Verify that error message "The password and confirmation password do not match." displays
+[INFO ] [2023-06-19 15:37:40,277] Register_01 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:37:40,572] Pre-condition: Admin logged in successfully
+[INFO ] [2023-06-19 15:37:41,024] Register_01 - Sep 02: Click Register button without entering any information
+[INFO ] [2023-06-19 15:37:41,163] Register_01 - Sep 03: Verify that error message "<field name> is required." for each required field displays
+[INFO ] [2023-06-19 15:37:41,458] Register_02 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:37:41,863] Register_02 - Sep 02: input all required fields with invalid email format
+[INFO ] [2023-06-19 15:37:42,754] Admin_01 - Step 01: Click Catalog link from left menu
+[INFO ] [2023-06-19 15:37:42,872] Register_02 - Sep 03: Verify that error message "Wrong email" displays
+[INFO ] [2023-06-19 15:37:42,930] Register_03 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:37:42,962] Admin_01 - Step 02: Click Products sub-menu
+[INFO ] [2023-06-19 15:37:43,428] Register_03 - Sep 02: Register an account using valid information
+[INFO ] [2023-06-19 15:37:43,433] Email: afc2351@yopmail.com
+[INFO ] [2023-06-19 15:37:44,030] Admin_01 - Step 03: Search product name: Lenovo IdeaCentre 600 All-in-One PC
+[INFO ] [2023-06-19 15:37:44,945] Register_03 - Sep 03: Verify that success message "Your registration completed" displays
+[INFO ] [2023-06-19 15:37:45,134] Admin_01 - Step 04: Verify the search result
+[INFO ] [2023-06-19 15:37:45,383] Register_04 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:37:45,866] Register_04 - Sep 02: Register an account using an email that already exist in the system
+[INFO ] [2023-06-19 15:37:47,146] Register_04 - Sep 03: Verify that error message "The specified email already exists" displays
+[INFO ] [2023-06-19 15:37:47,200] Register_05 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:37:47,544] Register_05 - Sep 02: Register an account using password that has less than 6 characters
+[INFO ] [2023-06-19 15:37:48,393] Register_05 - Sep 03: Verify that error message "Password must meet the following rules:must have at least 6 characters" displays
+[INFO ] [2023-06-19 15:37:48,446] Register_06 - Sep 01: Click Register link from Homepage
+[INFO ] [2023-06-19 15:37:48,839] Register_06 - Sep 02: Register an account having confirm password doesn't match with password
+[INFO ] [2023-06-19 15:37:49,681] Register_06 - Sep 03: Verify that error message "The password and confirmation password do not match." displays
