@@ -9,13 +9,13 @@ It's being developed using **Selenium**, one of the most common UI test librarie
 
 **Maven** is being used to manage dependencies, build and execute the tests using CLI
 
-## 🧮 Components 🧮
-- commons
-- pageObjects
-- pageUI
+## 🧮 Structure & Components 🧮
+- `commons`: Contain classes that can be re-used across the pages and tests such as `BasePage.java`, `BaseTest.java`, global constants, report configuration
+- `pageObjects`: Each class contains the actions to interact with elements of a specific page of the application, also include `PageGeneratorManager.java` that contains all the page object initilization
+- `pageUI`: each class contain the locators of elements in a page of the application. Each page will have a respective class in pageObjects folder
   
-- tests
-- resources
+- `tests`: Each package contains test classes of a feature/module. Each test class can have multiple test cases of a function (e.g. Login)
+- `resources`: manage external files of the entire framework
 
 ## ⚛️ OOP application ⚛️
 - _**Inheritance**_: (extends)
@@ -62,7 +62,7 @@ The job with the following steps will be executed on a clean instance (latest ub
 _NOTE_: Because the https://demo.nopcommerce.com/ is a website just for practice purposes, the registered account would be expired after 20 minutes. Therefore, in order to run the successful login test, you need to replace the USER_ACCOUNT in Accounts.java class by a newly registerred account before running the test.
 
 ## ⬆️ Potential Improvements ⬆️
-- Log
+- ~~Log~~ DONE
 - Extent Report
 - Selenium Grid
 - Selenium Grid with Docker
