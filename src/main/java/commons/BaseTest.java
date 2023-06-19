@@ -1,7 +1,9 @@
 package commons;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,6 +14,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
+	
+	// Init log
+	protected final Log log;
+	
+	// Constructor
+	protected BaseTest() {
+		log = LogFactory.getLog(getClass());
+	}
 
 
 	protected WebDriver getBrowserDriver(String browserName, String baseUrl) {
@@ -46,7 +56,7 @@ public class BaseTest {
 			throw new RuntimeException("invalid browser name!");
 		}
 
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.get(baseUrl);
 
 		return driver;

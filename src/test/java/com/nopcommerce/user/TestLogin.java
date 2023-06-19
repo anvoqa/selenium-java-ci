@@ -38,33 +38,63 @@ public class TestLogin extends BaseTest {
 
 	@Test
 	public void Login_01_Empty_Data() {
+		
+		log.info("Login_01 - Sep 01: Click Login link from Homepage");
 		loginPage = (LoginPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);
+		
+		log.info("Login_01 - Sep 02: Click Login button without entering any information");
 		loginPage.clickLoginButton();
+		
+		log.info("Login_01 - Sep 03: Verify error \"Please enter your email\" displays");
 		Assert.assertEquals(loginPage.getEmailErrorMsg(), "Please enter your email");
 	}
 
 	@Test
 	public void Login_02_Invalid_Email() {
+		
+		log.info("Login_02 - Sep 01: Click Login link from Homepage");
 		loginPage = (LoginPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);
+		
+		log.info("Login_02 - Sep 02: Input email with invalid format");
 		loginPage.inputEmail(invalidEmail);
+		
+		log.info("Login_02 - Sep 03: Click Login button");
 		loginPage.clickLoginButton();
+		
+		log.info("Login_02 - Sep 04: Verify error \"Wrong email\" displays");
 		Assert.assertEquals(loginPage.getEmailErrorMsg(), "Wrong email");
 	}
 
 	@Test
 	public void Login_03_Email_Not_Registered() {
+		
+		log.info("Login_03 - Sep 01: Click Login link from Homepage");
 		loginPage = (LoginPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);
+		
+		log.info("Login_03 - Sep 02: Input a valid email that doesn't exist in the system");
 		loginPage.inputEmail(notExistEmail);
+		
+		log.info("Login_03 - Sep 03: Click Login button");
 		loginPage.clickLoginButton();
+		
+		log.info("Login_03 - Sep 04: Verify error \"Login was unsuccessful. Please correct the errors and try again. No customer account found\" displays");
 		Assert.assertEquals(loginPage.getUnsuccessfulLoginErrorMsg(),
 				"Login was unsuccessful. Please correct the errors and try again.\n" + "No customer account found");
 	}
 
 	@Test
 	public void Login_04_Empty_Password() {
+		
+		log.info("Login_04 - Sep 01: Click Login link from Homepage");
 		loginPage = (LoginPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);
+		
+		log.info("Login_04 - Sep 02: Input a valid email and leave the password empty");
 		loginPage.inputEmail(acc.getEmail());
+		
+		log.info("Login_04 - Sep 03: Click Login button");
 		loginPage.clickLoginButton();
+		
+		log.info("Login_04 - Sep 04: Verify error \"Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect\" displays");
 		Assert.assertEquals(loginPage.getUnsuccessfulLoginErrorMsg(),
 				"Login was unsuccessful. Please correct the errors and try again.\n"
 						+ "The credentials provided are incorrect");
@@ -72,10 +102,20 @@ public class TestLogin extends BaseTest {
 
 	@Test
 	public void Login_05_Wrong_Password() {
+		
+		log.info("Login_05 - Sep 01: Click Login link from Homepage");
 		loginPage = (LoginPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);
+		
+		log.info("Login_05 - Sep 02: Input a valid email");
 		loginPage.inputEmail(acc.getEmail());
+		
+		log.info("Login_05 - Sep 03: Input wrong password");
 		loginPage.inputPassword(invalidEmail);
+		
+		log.info("Login_05 - Sep 04: Click Login button");
 		loginPage.clickLoginButton();
+		
+		log.info("Login_05 - Sep 05: Verify error \"Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect\" displays");
 		Assert.assertEquals(loginPage.getUnsuccessfulLoginErrorMsg(),
 				"Login was unsuccessful. Please correct the errors and try again.\n"
 						+ "The credentials provided are incorrect");
@@ -83,15 +123,27 @@ public class TestLogin extends BaseTest {
 
 	@Test
 	public void Login_06_Success() {
+		
+		log.info("Login_06 - Sep 01: Click Login link from Homepage");
 		loginPage = (LoginPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);
+		
+		log.info("Login_06 - Sep 02: Input a valid email");
 		loginPage.inputEmail(acc.getEmail());
+		
+		log.info("Login_06 - Sep 03: Input valid password");
 		loginPage.inputPassword(acc.getPassword());
+		
+		log.info("Login_06 - Sep 04: Click Login button");
 		homePage = loginPage.clickLoginButton();
+		
+		log.info("Login_06 - Sep 05: Verify My Account page displays");
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+		
+		log.info("Login_06 - Sep 06: Log out");
 		homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGOUT_LINK);
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		driver.quit();
 	}
