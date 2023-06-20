@@ -37,13 +37,13 @@ public class TestRegistration extends BaseTest {
 	@Test
 	public void Register_01_Empty_Data() {
 		
-		log.info("Register_01 - Sep 01: Click Register link from Homepage");
+		log.info("Register_01 - Step 01: Click Register link from Homepage");
 		registerPage = (RegisterPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.REGISTER_LINK);
 		
-		log.info("Register_01 - Sep 02: Click Register button without entering any information");
+		log.info("Register_01 - Step 02: Click Register button without entering any information");
 		registerPage.clickRegisterButton();
 		
-		log.info("Register_01 - Sep 03: Verify that error message \"<field name> is required.\" for each required field displays");
+		log.info("Register_01 - Step 03: Verify that error message \"<field name> is required.\" for each required field displays");
 		Assert.assertEquals(registerPage.getFirstNameErrorMsg(), "First name is required.");
 		Assert.assertEquals(registerPage.getLastNameErrorMsg(), "Last name is required.");
 		Assert.assertEquals(registerPage.getEmailErrorMsg(), "Email is required.");
@@ -54,29 +54,29 @@ public class TestRegistration extends BaseTest {
 	@Test
 	public void Register_02_Invalid_Email() {
 		
-		log.info("Register_02 - Sep 01: Click Register link from Homepage");
+		log.info("Register_02 - Step 01: Click Register link from Homepage");
 		registerPage = (RegisterPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.REGISTER_LINK);
 		
-		log.info("Register_02 - Sep 02: input all required fields with invalid email format");
+		log.info("Register_02 - Step 02: input all required fields with invalid email format");
 		acc.setEmail("123@456#%*");
 		registerPage.registerAnAccount(acc);
 		
-		log.info("Register_02 - Sep 03: Verify that error message \"Wrong email\" displays");
+		log.info("Register_02 - Step 03: Verify that error message \"Wrong email\" displays");
 		Assert.assertEquals(registerPage.getEmailErrorMsg(), "Wrong email");
 	}
 
 	@Test
 	public void Register_03_Success() {
 		
-		log.info("Register_03 - Sep 01: Click Register link from Homepage");
+		log.info("Register_03 - Step 01: Click Register link from Homepage");
 		registerPage = (RegisterPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.REGISTER_LINK);
 		
-		log.info("Register_03 - Sep 02: Register an account using valid information");
+		log.info("Register_03 - Step 02: Register an account using valid information");
 		acc.setEmail(Accounts.generateRandomEmail());
 		log.info("Email: " + acc.getEmail());
 		registerPage.registerAnAccount(acc);
 		
-		log.info("Register_03 - Sep 03: Verify that success message \"Your registration completed\" displays");
+		log.info("Register_03 - Step 03: Verify that success message \"Your registration completed\" displays");
 		Assert.assertEquals(registerPage.getRegisterSuccessMsg(), "Your registration completed");
 		homePage = (HomePageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.LOGIN_LINK);;
 	}
@@ -84,27 +84,27 @@ public class TestRegistration extends BaseTest {
 	@Test
 	public void Register_04_Email_Exist() {
 		
-		log.info("Register_04 - Sep 01: Click Register link from Homepage");
+		log.info("Register_04 - Step 01: Click Register link from Homepage");
 		registerPage = (RegisterPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.REGISTER_LINK);
 		
-		log.info("Register_04 - Sep 02: Register an account using an email that already exist in the system");
+		log.info("Register_04 - Step 02: Register an account using an email that already exist in the system");
 		registerPage.registerAnAccount(acc);
 		
-		log.info("Register_04 - Sep 03: Verify that error message \"The specified email already exists\" displays");
+		log.info("Register_04 - Step 03: Verify that error message \"The specified email already exists\" displays");
 		Assert.assertEquals(registerPage.getEmailAlreadyExistErrorMsg(), "The specified email already exists");
 	}
 
 	@Test
 	public void Register_05_Password_Less_Then_6_Characters() {
 		
-		log.info("Register_05 - Sep 01: Click Register link from Homepage");
+		log.info("Register_05 - Step 01: Click Register link from Homepage");
 		registerPage = (RegisterPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.REGISTER_LINK);
 		
-		log.info("Register_05 - Sep 02: Register an account using password that has less than 6 characters");
+		log.info("Register_05 - Step 02: Register an account using password that has less than 6 characters");
 		acc.setPassword("12345");
 		registerPage.registerAnAccount(acc);
 		
-		log.info("Register_05 - Sep 03: Verify that error message \"Password must meet the following rules:must have at least 6 characters\" displays");
+		log.info("Register_05 - Step 03: Verify that error message \"Password must meet the following rules:must have at least 6 characters\" displays");
 		Assert.assertEquals(registerPage.getPasswordErrorMsg(),
 				"Password must meet the following rules:\nmust have at least 6 characters");
 	}
@@ -112,15 +112,15 @@ public class TestRegistration extends BaseTest {
 	@Test
 	public void Register_06_Invalid_Confirm_Password() {
 		
-		log.info("Register_06 - Sep 01: Click Register link from Homepage");
+		log.info("Register_06 - Step 01: Click Register link from Homepage");
 		registerPage = (RegisterPageObject) homePage.clickTopMenuLink(Top_Menu_Xpaths.REGISTER_LINK);
 		
-		log.info("Register_06 - Sep 02: Register an account having confirm password doesn't match with password");
+		log.info("Register_06 - Step 02: Register an account having confirm password doesn't match with password");
 		acc.setPassword("123456");
 		acc.setConfirmPassword("654123");
 		registerPage.registerAnAccount(acc);
 		
-		log.info("Register_06 - Sep 03: Verify that error message \"The password and confirmation password do not match.\" displays");
+		log.info("Register_06 - Step 03: Verify that error message \"The password and confirmation password do not match.\" displays");
 		Assert.assertEquals(registerPage.getConfirmPasswordErrorMsg(),
 				"The password and confirmation password do not match.");
 	}
