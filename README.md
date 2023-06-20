@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/anvoqa/selenium-java-ci/actions/workflows/ci-maven.yml/badge.svg)](https://github.com/anvoqa/selenium-java-ci/actions/workflows/ci-maven.yml)
+
 # selenium-java-ci
 
 ## 🥇 Introduction 🥇
