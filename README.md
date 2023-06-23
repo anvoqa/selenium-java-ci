@@ -1,6 +1,6 @@
 [![Java CI with Maven](https://github.com/anvoqa/selenium-java-ci/actions/workflows/ci-maven.yml/badge.svg)](https://github.com/anvoqa/selenium-java-ci/actions/workflows/ci-maven.yml)
 
-# selenium-java-ci
+# selenium-java-ci <img src="https://github.com/devicons/devicon/blob/master/icons/selenium/selenium-original.svg" title="Selenium" alt="Selenium" width="35" height="35"/> <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="40" height="40"/> 
 
 ## 🥇 Introduction 🥇
 This is a simple test framework I developed to demonstrate my experience in UI automated tests development. 
